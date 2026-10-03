@@ -1,0 +1,12 @@
+! Cisco R3 — verification commands / sanitized notes
+show ip interface brief
+show run interface GigabitEthernet0/1
+show run | section crypto
+show access-lists
+show crypto map
+show crypto isakmp sa
+show crypto ipsec sa
+
+! PSK configured for peer 198.51.100.2 — value intentionally omitted.
+! Crypto map VPN-FGT02 is applied to GigabitEthernet0/1.
+! Interesting traffic: 172.16.60.0/28 <-> 172.16.50.0/25.

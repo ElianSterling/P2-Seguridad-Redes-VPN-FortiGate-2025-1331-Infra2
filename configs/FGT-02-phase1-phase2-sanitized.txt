@@ -1,0 +1,24 @@
+# FGT-02 — VPN-FGT02-R3
+# Configuración sanitizada para publicación
+
+config vpn ipsec phase1-interface
+    edit "VPN-FGT02-R3"
+        set interface "port2"
+        set peertype any
+        set net-device disable
+        set proposal des-sha1
+        set dhgrp 14
+        set remote-gw 192.0.2.6
+        set psksecret <REDACTED>
+    next
+end
+
+config vpn ipsec phase2-interface
+    edit "VPN-FGT02-R3"
+        set phase1name "VPN-FGT02-R3"
+        set proposal des-sha1
+        set dhgrp 14
+        set src-subnet 172.16.50.0 255.255.255.128
+        set dst-subnet 172.16.60.0 255.255.255.240
+    next
+end
